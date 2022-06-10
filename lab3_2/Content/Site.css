@@ -22,3 +22,69 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.navbar-inverse {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+}
+
+/*.navbar-inverse .navbar-nav > li > a{
+    color: white;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }*/
+.course {
+    margin-top: 30px;
+    list-style: none;
+}
+
+.course > li{
+    position: relative;
+    margin-bottom:30px;
+}
+    .course > li .date {
+        text-align: center;
+        /* background-color: #ff0000;*/
+        color: #ffffff;
+        width: 60px;
+        border-radius: 8px;
+        background: #33CCCC; /* Fallback */
+        animation: color 9s infinite linear;
+       
+        
+    }
+    .course > li .details {
+       
+        position: absolute;
+        top: 0;
+        left: 70px;
+    }
+@keyframes color {
+    0% {
+        background: #33CCCC;
+    }
+
+    20% {
+        background: #33CC36;
+    }
+
+    40% {
+        background: #B8CC33;
+    }
+
+    60% {
+        background: #FCCA00;
+    }
+
+    80% {
+        background: #33CC36;
+    }
+
+    100% {
+        background: #33CCCC;
+    }
+}
+
