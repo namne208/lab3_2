@@ -18,23 +18,21 @@ namespace lab3_2.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-        [HttpPost]
-        public IHttpActionResult Attend([FromBody] int courseId)
-        {
-            var userId = User.Identity.GetUserId();
-            if(_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))
-            {
-                return BadRequest("The Attendance  alreadly exists!");
-            }
-            var attendance = new Attendance
-            {
-                CourseId = courseId,
-                AttendeeId = userId
-            };
-            _dbContext.Attendances.Add(attendance);
-            _dbContext.SaveChangesAsync();
-            return Ok();
-        }
+        //[HttpPost]
+        //public IHttpActionResult Attend([FromBody] int courseId)
+        //{
+        //    var userId = User.Identity.GetUserId();
+        //    if(_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))           
+        //        return BadRequest("The Attendance  alreadly exists!");         
+        //    var attendance = new Attendance
+        //    {
+        //        CourseId = courseId,
+        //        AttendeeId = userId
+        //    };
+        //    _dbContext.Attendances.Add(attendance);
+        //    _dbContext.SaveChangesAsync();
+        //    return Ok();
+        //}
 
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto attendanceDto)

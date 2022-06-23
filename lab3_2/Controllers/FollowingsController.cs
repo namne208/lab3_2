@@ -1,4 +1,5 @@
-﻿using lab3_2.Models;
+﻿using lab3_2.DTOs;
+using lab3_2.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace lab3_2.Controllers
             _dbContext = new ApplicationDbContext();
         }
         [HttpPost]
-        public IHttpActionResult Follow(Following followingDto)
+        public IHttpActionResult Follow(FollowingDto followingDto)
         {
             var userId = User.Identity.GetUserId();
             if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDto.FolloweeId))
