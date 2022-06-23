@@ -32,7 +32,7 @@ namespace lab3_2.Controllers
                 AttendeeId = userId
             };
             _dbContext.Attendances.Add(attendance);
-            _dbContext.SaveChanges();
+            _dbContext.SaveChangesAsync();
             return Ok();
         }
 
